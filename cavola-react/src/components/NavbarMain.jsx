@@ -27,6 +27,7 @@ export default function NavbarMain() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Scroll handler (for sections on homepage only)
   const handleScrollTo = (e, id) => {
     e.preventDefault();
     const target = document.getElementById(id);
@@ -74,12 +75,13 @@ export default function NavbarMain() {
             <Nav.Link onClick={(e) => handleScrollTo(e, 'blog')} className="px-3">
               Blog
             </Nav.Link>
-            <Nav.Link onClick={(e) => handleScrollTo(e, 'contact')} className="px-3">
+            {/* ✅ Navigate directly to Contact page */}
+            <Nav.Link onClick={() => navigate('/contact')} className="px-3">
               Contact Us
             </Nav.Link>
           </Nav>
 
-          {/* Right CTA - moves below nav in mobile */}
+          {/* Right CTA - goes to Contact page */}
           <div className="text-center mt-3 mt-lg-0">
             <Button
               style={{
@@ -88,7 +90,7 @@ export default function NavbarMain() {
                 borderRadius: '999px',
                 padding: '8px 20px',
               }}
-              onClick={(e) => handleScrollTo(e, 'contact')}
+              onClick={() => navigate('/contact')}
             >
               Request a Quote
             </Button>
