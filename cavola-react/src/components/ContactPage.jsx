@@ -8,49 +8,48 @@ export default function ContactPage() {
     <section className="section">
       {/* ✅ Banner Section */}
       <div
-        style={{
-          background: "#094D12",
-          padding: "60px 0",
-          textAlign: "center",
-          width: "100%",          // ✅ full width
-          height: "400px",        // ✅ banner height
-          borderRadius: "0",      // ✅ edge-to-edge, remove rounding
-          position: "relative",   // ✅ allows overlay
-          overflow: "hidden",
-        }}
-      >
-        {/* Banner Image */}
-        <img
-          src={contactImg}
-          alt="Contact"
-          style={{
-            position: "absolute",
-            bottom: 0,
-            right: "50px",
-            height: "100%",
-            objectFit: "contain",
-          }}
-        />
+  style={{
+    background: "#094D12",
+    height: "705px",
+    position: "relative",
+    overflow: "hidden",
 
-        {/* Contact Us text */}
-        <h2
-          style={{
-            color: "#F7C35F",
-            fontFamily: "Raleway",
-            fontSize: "64px",
-            fontWeight: 700,
-            lineHeight: "61.68px",
-            margin: 0,
-            textAlign: "left",
-            position: "relative", // ✅ keeps text above image
-            zIndex: 2,
-            paddingLeft: "80px",
-            paddingTop: "80px",
-          }}
-        >
-          Contact Us
-        </h2>
-      </div>
+    display: "flex",
+    alignItems: "center",   // ✅ vertical center
+    justifyContent: "flex-start", // ✅ push to left
+    paddingLeft: "80px",    // ✅ control distance from left edge
+  }}
+>
+  {/* Banner Image */}
+  <img
+    src={contactImg}
+    alt="Contact"
+    style={{
+      position: "absolute",
+      bottom: 0,
+      right: "50px",
+      height: "809px",
+      objectFit: "contain",
+    }}
+  />
+
+  {/* Contact Us text */}
+  <h2
+    style={{
+      color: "#F7C35F",
+      fontFamily: "Raleway",
+      fontSize: "64px",
+      fontWeight: 700,
+      lineHeight: "61.68px",
+      margin: 0,
+      position: "relative",
+      zIndex: 2,
+    }}
+  >
+    Contact Us
+  </h2>
+</div>
+
 
       {/* ✅ Contact Info + Form stays same */}
       <Container className="my-5">
