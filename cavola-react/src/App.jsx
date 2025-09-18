@@ -10,9 +10,10 @@ import Leadership from './components/Leadership';
 import Blog from './components/Blog';
 import BlogList from './components/BlogList';
 import BlogDetail from './components/BlogDetail';
-import ContactPage from './components/ContactPage'; // ✅ use dedicated page
+import ContactPage from './components/ContactPage'; 
 import Footer from './components/Footer';
 import Partnership from './components/Partnership';
+import Contact from './components/Contact';
 
 const Home = () => (
   <>
@@ -24,6 +25,7 @@ const Home = () => (
     <Services />
     <Partnership />
     <Blog />
+    <Contact />
   </>
 );
 

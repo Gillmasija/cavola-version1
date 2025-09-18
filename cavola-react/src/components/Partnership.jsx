@@ -1,21 +1,21 @@
 import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import handshakeImg from '../assets/handshake.jpg'; // replace with actual path
-import polyIcon from '../assets/poly.svg'; // the arrow bullet svg
+import handshakeImg from '../assets/handshake.jpg'; // handshake image
+import wheatImg from '../assets/wheat-bg.png';         // watermark wheat image
+import polyIcon from '../assets/poly.svg';          // bullet icon
 
 export default function GrowthJourney() {
   return (
     <section style={{ background: '#fff', padding: '80px 0' }}>
       <Container style={{ maxWidth: '1200px' }}>
         <Row className="align-items-center g-5">
-          {/* Left Side */}
+          {/* Left Side - Handshake Image with Button */}
           <Col md={6}>
             <div
               style={{
                 position: 'relative',
                 borderRadius: '12px',
                 overflow: 'hidden',
-                height: '100%',       // 🔑 makes container stretch
               }}
             >
               <img
@@ -23,30 +23,39 @@ export default function GrowthJourney() {
                 alt="Handshake"
                 style={{
                   width: '100%',
-                  height: '500px',     // 🔑 increased height
+                  height: '500px',
                   objectFit: 'cover',
                 }}
               />
               <div
                 style={{
                   position: 'absolute',
-                  bottom: '20px',
-                  left: '20px',
-                  background: '#fff',
-                  padding: '12px 16px',
-                  borderRadius: '8px',
+                  bottom: '30px',
+                  left: '30px',
+                  background: 'rgba(255, 255, 255, 0.70)',
+                  height: '117px',
+                  padding: '34px 49px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRadius: '12px',
                 }}
               >
                 <Button
                   style={{
-                    background: '#154734',
-                    border: 'none',
-                    borderRadius: '999px',
-                    padding: '10px 22px',
-                    fontWeight: 500,
+                    color: '#FFF',
+                    fontFamily: 'Raleway',
+                    fontSize: '22.918px',
+                    fontWeight: 400,
+                    lineHeight: '38.197px',
                     display: 'flex',
+                    padding: '5px 29px',
+                    justifyContent: 'center',
                     alignItems: 'center',
-                    gap: '8px',
+                    gap: '10px',
+                    borderRadius: '25.235px',
+                    border: '9px solid rgba(255, 255, 255, 0.57)',
+                    background: '#094D12',
                   }}
                 >
                   Discuss Partnership Opportunities →
@@ -55,22 +64,41 @@ export default function GrowthJourney() {
             </div>
           </Col>
 
-          {/* Right Side */}
+          {/* Right Side - Growth Journey with Wheat Watermark */}
           <Col md={6}>
             <div
               style={{
-                background: '#154734',
+                background: '#094D12',
                 borderRadius: '12px',
                 padding: '40px',
-                color: '#fff',
-                height: '100%',        // 🔑 helps keep heights balanced
+                color: '#FFF',
+                position: 'relative',
+                overflow: 'hidden',
               }}
             >
+              {/* Wheat watermark */}
+              <img
+                src={wheatImg}
+                alt="wheat watermark"
+                style={{
+                  position: 'absolute',
+                  right: '30px',
+                  bottom: '20px',
+                  opacity: 0.15,
+                  height: '80%',
+                  pointerEvents: 'none',
+                }}
+              />
+
               <h2
                 style={{
+                  fontFamily: 'Raleway',
+                  fontSize: '50px',
                   fontWeight: 700,
-                  fontSize: '2rem',
-                  marginBottom: '30px',
+                  lineHeight: '61.68px',
+                  marginBottom: '40px',
+                  position: 'relative',
+                  zIndex: 1,
                 }}
               >
                 Our growth journey
@@ -95,8 +123,14 @@ export default function GrowthJourney() {
                   key={i}
                   style={{
                     display: 'flex',
-                    alignItems: 'flex-start',
+                    alignItems: 'center',
+                    padding: '20px',
+                    borderRadius: '10px',
+                    border: '1px solid #FFF',
                     marginBottom: '20px',
+                    background: 'rgba(0,0,0,0.1)',
+                    position: 'relative',
+                    zIndex: 1,
                   }}
                 >
                   <img
@@ -106,28 +140,21 @@ export default function GrowthJourney() {
                       width: '18px',
                       height: '18px',
                       marginRight: '12px',
-                      marginTop: '6px',
                       flexShrink: 0,
                     }}
                   />
-                  <div
-                    style={{
-                      border: '1px solid rgba(255,255,255,0.4)',
-                      borderRadius: '8px',
-                      padding: '16px 20px',
-                      flex: 1,
-                    }}
-                  >
+                  <div>
                     <div
                       style={{
+                        fontFamily: 'Raleway',
                         fontWeight: 600,
-                        fontSize: '1.1rem',
+                        fontSize: '24px',
                         marginBottom: '6px',
                       }}
                     >
                       {item.title}
                     </div>
-                    <div style={{ fontSize: '1rem', color: '#ddd' }}>
+                    <div style={{ fontSize: '18px', color: '#FFF' }}>
                       {item.text}
                     </div>
                   </div>

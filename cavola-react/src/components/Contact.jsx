@@ -6,7 +6,7 @@ export default function Contact() {
     <section
       id="contact"
       style={{
-        background: '#154734', // dark green background
+        background: '#094D12', // dark green background
         padding: '80px 0',
       }}
     >

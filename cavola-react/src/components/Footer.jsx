@@ -1,80 +1,152 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import { FaInstagram, FaLinkedin, FaFacebook, FaTwitter, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   return (
     <footer
       style={{
-        background: '#1a1a1a',
+        background: '#1E1E1E',
         color: '#fff',
-        padding: '60px 0 20px',
-        position: 'relative',
+        padding: '60px 120px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start',
+        flexWrap: 'wrap',
       }}
     >
-      <Container>
-        <Row className="gy-4">
-          {/* Left - Company Info */}
-          <Col md={4}>
-            <h5 style={{ fontWeight: 700, marginBottom: '16px' }}>Cavola West Africa Limited</h5>
-            <p style={{ fontSize: '0.95rem', lineHeight: 1.6, marginBottom: '20px' }}>
-              From Nigeria’s farms to international buyers, we ensure compliance, consistency, and efficiency.
-            </p>
-            {/* Social Icons */}
-            <div style={{ display: 'flex', gap: '12px', fontSize: '1.3rem' }}>
-              <a href="#" style={{ color: '#fff' }}><FaInstagram /></a>
-              <a href="#" style={{ color: '#fff' }}><FaLinkedin /></a>
-              <a href="#" style={{ color: '#fff' }}><FaFacebook /></a>
-              <a href="#" style={{ color: '#fff' }}><FaTwitter /></a>
-            </div>
-          </Col>
-
-          {/* Middle - Contact */}
-          <Col md={4}>
-            <h5 style={{ fontWeight: 700, marginBottom: '16px' }}>Contact</h5>
-            <p style={{ marginBottom: '8px' }}>
-              <strong>Nigeria:</strong> +234 802 465 5655 | +234 907 473 4419
-            </p>
-            <p style={{ marginBottom: '8px' }}>
-              <strong>UK:</strong> +44 7943 612728
-            </p>
-            <p style={{ marginBottom: '8px' }}>
-              <strong>Email:</strong> cavola@cavolawestafrica.com
-            </p>
-            <p style={{ marginBottom: '8px' }}>
-              <strong>Nigeria Office:</strong> 2nd Floor, Oakland Centre, Plot 2940 Aguiyi Ironsi Street, Maitama, Abuja
-            </p>
-            <p style={{ marginBottom: 0 }}>
-              <strong>UK Office:</strong> Cavola Limited, Registered Company
-            </p>
-          </Col>
-
-          {/* Right - Quick Links */}
-          <Col md={4}>
-            <h5 style={{ fontWeight: 700, marginBottom: '16px' }}>Quick Link</h5>
-            <ul style={{ listStyle: 'none', padding: 0, lineHeight: 2 }}>
-              <li><a href="#about" style={{ color: '#fff', textDecoration: 'none' }}>About</a></li>
-              <li><a href="#services" style={{ color: '#fff', textDecoration: 'none' }}>Product & Services</a></li>
-              <li><a href="#blog" style={{ color: '#fff', textDecoration: 'none' }}>Blog</a></li>
-              <li><a href="#contact" style={{ color: '#fff', textDecoration: 'none' }}>Contact</a></li>
-            </ul>
-          </Col>
-        </Row>
-
-        {/* Copyright */}
-        <div
+      {/* Left - Company Info */}
+      <div style={{ flex: '1', minWidth: '300px' }}>
+        <h3
           style={{
-            borderTop: '1px solid rgba(255,255,255,0.1)',
-            textAlign: 'center',
-            marginTop: '40px',
-            paddingTop: '20px',
-            fontSize: '0.9rem',
-            color: '#aaa',
+            fontFamily: 'Montserrat',
+            fontSize: '28px',
+            fontWeight: 700,
+            marginBottom: '16px',
           }}
         >
-          ©2025 Cavola Limited. All rights reserved.
+          Cavola West Africa Limited
+        </h3>
+        <p
+          style={{
+            fontFamily: 'Raleway',
+            fontSize: '16px',
+            fontWeight: 300,
+            lineHeight: '1.5',
+            maxWidth: '380px',
+            marginBottom: '20px',
+          }}
+        >
+          From Nigeria’s farms to international buyers, we ensure compliance,
+          consistency, and efficiency.
+        </p>
+
+        {/* Social Media Icons */}
+        <div style={{ display: 'flex', gap: '12px', marginBottom: '20px' }}>
+          <a href="#" style={{ color: '#fff', fontSize: '24px' }}>
+            <FaInstagram />
+          </a>
+          <a href="#" style={{ color: '#fff', fontSize: '24px' }}>
+            <FaLinkedin />
+          </a>
+          <a href="#" style={{ color: '#fff', fontSize: '24px' }}>
+            <FaFacebook />
+          </a>
+          <a href="#" style={{ color: '#fff', fontSize: '24px' }}>
+            <FaWhatsapp />
+          </a>
         </div>
-      </Container>
+
+        {/* Copyright under Left Column */}
+        <p
+          style={{
+            fontFamily: 'Raleway',
+            fontSize: '14px',
+            fontWeight: 400,
+            color: '#ccc',
+            marginTop: '20px',
+          }}
+        >
+          ©2025 Cavola Limited. All rights Reserved.
+        </p>
+      </div>
+
+      {/* Middle - Contact */}
+      <div style={{ flex: '1', minWidth: '300px' }}>
+        <h4
+          style={{
+            fontFamily: 'Raleway',
+            fontSize: '20px',
+            fontWeight: 700,
+            marginBottom: '16px',
+          }}
+        >
+          Contact
+        </h4>
+        <p>
+          <strong>Nigeria:</strong> +234 802 465 5655 | +234 907 473 4419
+        </p>
+        <p>
+          <strong>UK:</strong> +44 7943 612728
+        </p>
+        <p>
+          <strong>Email:</strong> cavola@cavolawestafrica.com
+        </p>
+        <p>
+          <strong>Nigeria Office:</strong> 2nd Floor, Oakland Centre, Plot 2940
+          Aguiyi Ironsi Street, Maitama, Abuja
+        </p>
+        <p>
+          <strong>UK Office:</strong> Cavola Limited, Registered Company
+        </p>
+      </div>
+
+      {/* Right - Quick Links */}
+      <div style={{ flex: '1', minWidth: '200px' }}>
+        <h4
+          style={{
+            fontFamily: 'Raleway',
+            fontSize: '20px',
+            fontWeight: 700,
+            marginBottom: '16px',
+          }}
+        >
+          Quick Link
+        </h4>
+        <ul style={{ listStyle: 'none', padding: 0, lineHeight: 2 }}>
+          <li>
+            <a
+              href="#about"
+              style={{ color: '#fff', textDecoration: 'none', fontSize: '16px' }}
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#services"
+              style={{ color: '#fff', textDecoration: 'none', fontSize: '16px' }}
+            >
+              Product & Services
+            </a>
+          </li>
+          <li>
+            <a
+              href="#blog"
+              style={{ color: '#fff', textDecoration: 'none', fontSize: '16px' }}
+            >
+              Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              style={{ color: '#fff', textDecoration: 'none', fontSize: '16px' }}
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
 
       {/* Floating WhatsApp Button */}
       <a

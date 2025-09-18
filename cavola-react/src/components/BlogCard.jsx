@@ -1,42 +1,81 @@
-import React from "react";
-import { Card } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import React from 'react';
 
 export default function BlogCard({ blog }) {
-  const navigate = useNavigate();
-
   return (
-    <Card
+    <div
       style={{
-        cursor: "pointer",
-        border: "none",
-        borderRadius: "12px",
-        overflow: "hidden",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
-        transition: "transform 0.2s ease, box-shadow 0.2s ease",
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        width: '449.98px',
+        height: '500px', // ✅ fixed height for equal alignment
+        padding: '10px',
+        boxSizing: 'border-box',
       }}
-      onClick={() => navigate(`/blog/${blog.id}`)}
-      className="h-100"
     >
-      {/* Blog Image */}
-      <div style={{ height: "200px", overflow: "hidden" }}>
-        <Card.Img
-          variant="top"
+      {/* Image */}
+      <div
+        style={{
+          width: '100%',
+          height: '285.46px',
+          borderRadius: '5.448px',
+          overflow: 'hidden',
+          marginBottom: '20px',
+          background: '#D9D9D9',
+          flexShrink: 0,
+        }}
+      >
+        <img
           src={blog.image}
           alt={blog.title}
-          style={{ height: "100%", width: "100%", objectFit: "cover" }}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            display: 'block',
+          }}
         />
       </div>
 
-      {/* Blog Content */}
-      <Card.Body style={{ padding: "20px" }}>
-        <Card.Title style={{ fontSize: "1.1rem", fontWeight: "700", marginBottom: "10px" }}>
+      {/* Text container */}
+      <div
+        style={{
+          flexGrow: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+        }}
+      >
+        {/* Title */}
+        <h3
+          style={{
+            color: '#222',
+            fontFamily: 'Raleway',
+            fontSize: '29.418px',
+            fontWeight: 600,
+            lineHeight: '140%',
+            margin: 0,
+            marginBottom: '12px',
+          }}
+        >
           {blog.title}
-        </Card.Title>
-        <Card.Text style={{ fontSize: "0.95rem", color: "#555" }}>
+        </h3>
+
+        {/* Excerpt */}
+        <p
+          style={{
+            color: '#555',
+            fontFamily: 'Raleway',
+            fontSize: '16.343px',
+            fontWeight: 400,
+            lineHeight: '150%',
+            margin: 0,
+          }}
+        >
           {blog.excerpt}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+        </p>
+      </div>
+    </div>
   );
 }

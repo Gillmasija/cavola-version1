@@ -1,164 +1,156 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Pagination } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import useStore from "../store/useStore";
 import BlogCard from "./BlogCard";
+import Services from "./Services"; // ✅ certificate/services section
+import bannerImg from "../assets/hero2.png";
 
-// ✅ Import banner and certificate image if needed
-import heroImage from "../assets/hero2.png";
-
-export default function BlogPage() {
+export default function BlogList() {
   const blogs = useStore((state) => state.blogs);
+  const navigate = useNavigate();
 
-  // Duplicate blogs so we always have at least 9
-  const repeatedBlogs = [...blogs, ...blogs, ...blogs].slice(0, 27);
-
-  // Pagination state
-  const [currentPage, setCurrentPage] = useState(1);
+  // ✅ Pagination setup (fixed to 3 pages)
   const blogsPerPage = 9;
+  const [currentPage, setCurrentPage] = useState(1);
 
-  // Slice blogs for current page
-  const indexOfLastBlog = currentPage * blogsPerPage;
-  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-  const currentBlogs = repeatedBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
+  const indexOfLast = currentPage * blogsPerPage;
+  const indexOfFirst = indexOfLast - blogsPerPage;
+  let currentBlogs = blogs.slice(indexOfFirst, indexOfLast);
 
-  // Calculate total pages
-  const totalPages = Math.ceil(repeatedBlogs.length / blogsPerPage);
-
-  // Handle page change
-  const handlePageChange = (pageNumber) => {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      setCurrentPage(pageNumber);
+  // ✅ Ensure always 9 blogs (duplicate first row if not enough)
+  if (currentBlogs.length < blogsPerPage && blogs.length > 0) {
+    const firstRow = blogs.slice(0, 3);
+    while (currentBlogs.length < blogsPerPage) {
+      currentBlogs = [...currentBlogs, ...firstRow].slice(0, blogsPerPage);
     }
-  };
+  }
 
   return (
-    <>
-      <section style={{ background: "#fff", padding: "60px 0" }}>
-        <Container style={{ maxWidth: "1200px" }}>
-          {/* Blog Banner */}
-          <div
+    <section style={{ width: "100%", margin: "0 auto", padding: "40px 0" }}>
+      <Container fluid>
+        {/* ✅ Header Section */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            borderRadius: "10px",
+            background: "#094D12",
+            padding: "40px",
+            height: "712px",
+            color: "#fff",
+            width: "100%",
+          }}
+        >
+          <h2
             style={{
-              background: "#154734",
-              color: "#fff",
-              borderRadius: "12px",
-              marginBottom: "50px",
-              padding: "40px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "40px",
+              color: "#F7C35F",
+              fontFamily: "Raleway",
+              fontSize: "64px",
+              fontWeight: 700,
+              lineHeight: "61.68px",
+              margin: 0,
+              textAlign: "center",
             }}
           >
-            <div style={{ flex: 1 }}>
-              <h2
-                style={{
-                  fontSize: "2.5rem",
-                  fontWeight: "700",
-                  marginBottom: "10px",
-                }}
-              >
-                Blog & Insights
-              </h2>
-              <p style={{ fontSize: "1.1rem", margin: 0 }}>
-                Discover the latest trends and insights in sustainable farming and
-                agro-commodities.
-              </p>
-            </div>
-
-            <div style={{ flex: 1, textAlign: "right" }}>
-              <img
-                src={heroImage}
-                alt="Blog Banner"
-                style={{
-                  maxHeight: "220px",
-                  width: "100%",
-                  objectFit: "contain",
-                  borderRadius: "8px",
-                }}
-              />
-            </div>
-          </div>
-
-          {/* Blog Cards Grid */}
-          <Row xs={1} md={3} className="g-4">
-            {currentBlogs.map((b, i) => (
-              <Col key={`${b.id}-${i}`}>
-                <BlogCard blog={b} />
-              </Col>
-            ))}
-          </Row>
-
-          {/* Pagination */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "40px",
-              marginBottom: "60px",
-            }}
-          >
-            <Pagination>
-              <Pagination.Prev
-                onClick={() => handlePageChange(currentPage - 1)}
-                disabled={currentPage === 1}
-              >
-                ← Prev
-              </Pagination.Prev>
-              {Array.from({ length: totalPages }, (_, idx) => (
-                <Pagination.Item
-                  key={idx + 1}
-                  active={idx + 1 === currentPage}
-                  onClick={() => handlePageChange(idx + 1)}
-                >
-                  {idx + 1}
-                </Pagination.Item>
-              ))}
-              <Pagination.Next
-                onClick={() => handlePageChange(currentPage + 1)}
-                disabled={currentPage === totalPages}
-              >
-                Next →
-              </Pagination.Next>
-            </Pagination>
-          </div>
-        </Container>
-      </section>
-
-      {/* Certified Section */}
-      <section
-        style={{
-          background: "#f9f7f2",
-          padding: "60px 20px",
-          textAlign: "center",
-        }}
-      >
-        <Container style={{ maxWidth: "900px" }}>
-          <h2 style={{ fontSize: "2rem", fontWeight: "700", marginBottom: "20px" }}>
-            <span style={{ color: "#154734" }}>Certified.</span>{" "}
-            <span style={{ color: "#6BBE45" }}>Compliant.</span>{" "}
-            <span style={{ color: "#E6A540" }}>Trusted.</span>
+            Blog & Insights
           </h2>
-          <p style={{ fontSize: "1.1rem", marginBottom: "30px" }}>
-            Cavola West Africa Limited is an accredited exporter with the Nigerian
-            Export Promotion Council (NEPC), giving global buyers confidence in
-            every trade.
-          </p>
-          <button
+
+          <div
             style={{
-              background: "#6BBE45",
+              width: "100%",
+              maxWidth: "885px",
+              height: "400px",
+              background: `url(${bannerImg}) center / cover no-repeat`,
+              borderRadius: "10px",
+              marginTop: "20px",
+            }}
+          />
+        </div>
+
+        {/* ✅ Blog Grid - Always 9 blogs */}
+        <Row xs={1} sm={2} md={3} className="g-4 mt-5">
+          {currentBlogs.map((blog, index) => (
+            <Col key={index} style={{ display: "flex" }}>
+              <div
+                style={{ flex: 1, cursor: "pointer" }}
+                onClick={() => navigate(`/blog/${blog.id}`)}
+              >
+                <BlogCard blog={blog} />
+              </div>
+            </Col>
+          ))}
+        </Row>
+
+        {/* ✅ Pagination (always shows 1, 2, 3) */}
+        <div
+          style={{
+            marginTop: "40px",
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
+          }}
+        >
+          {/* Prev */}
+          <button
+            onClick={() => setCurrentPage((p) => p - 1)}
+            disabled={currentPage === 1}
+            style={{
+              padding: "10px 20px",
+              borderRadius: "6px",
+              border: "1px solid #C4C4C4",
+              background: "transparent",
+              color: "#333",
+              cursor: currentPage === 1 ? "not-allowed" : "pointer",
+            }}
+          >
+            ← Prev.
+          </button>
+
+          {/* Page Numbers (always 1, 2, 3) */}
+          {[1, 2, 3].map((num) => (
+            <button
+              key={num}
+              onClick={() => setCurrentPage(num)}
+              style={{
+                width: "40px",
+                height: "40px",
+                borderRadius: "6px",
+                border: "1px solid #C4C4C4",
+                background: currentPage === num ? "#246A21" : "transparent",
+                color: currentPage === num ? "#fff" : "#333",
+                cursor: "pointer",
+                fontWeight: currentPage === num ? "600" : "400",
+              }}
+            >
+              {num}
+            </button>
+          ))}
+
+          {/* Next */}
+          <button
+            onClick={() => setCurrentPage((p) => p + 1)}
+            disabled={currentPage === 3}
+            style={{
+              padding: "10px 20px",
+              borderRadius: "6px",
+              background: "#246A21",
               color: "#fff",
               border: "none",
-              padding: "12px 24px",
-              fontSize: "1rem",
-              borderRadius: "30px",
-              cursor: "pointer",
-              fontWeight: "500",
+              cursor: currentPage === 3 ? "not-allowed" : "pointer",
             }}
           >
-            Download Certificate →
+            Next →
           </button>
-        </Container>
-      </section>
-    </>
+        </div>
+      </Container>
+
+      {/* ✅ Certificate/Services edge-to-edge */}
+      <div style={{ marginTop: "80px", width: "1729px" }}>
+        <Services />
+      </div>
+    </section>
   );
 }

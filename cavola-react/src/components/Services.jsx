@@ -4,34 +4,75 @@ import { Container, Button } from 'react-bootstrap';
 export default function Certification() {
   return (
     <section
-      className="section"
       style={{
-        background: '#FAF9F6', // light background
-        textAlign: 'center',
-        padding: '80px 0',
+        display: 'flex',
+        width: '1729px',
+        padding: '73px 389px 73px 390px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: '#F6F4EF',
       }}
     >
-      <Container style={{ maxWidth: '900px' }}>
+      <Container
+        style={{
+          textAlign: 'center',
+        }}
+      >
         {/* Heading */}
-        <h2
+        <div
           style={{
-            fontWeight: 700,
-            fontSize: '2.4rem',
-            marginBottom: '20px',
+            height: '60px',
+            alignSelf: 'stretch',
+            marginBottom: '30px',
           }}
         >
-          <span style={{ color: '#1B5E20' }}>Certified.</span>{' '}
-          <span style={{ color: '#4CAF50' }}>Compliant.</span>{' '}
-          <span style={{ color: '#FFC94B' }}>Trusted.</span>
-        </h2>
+          <span
+            style={{
+              color: '#094D12',
+              fontFamily: 'Raleway',
+              fontSize: '64px',
+              fontWeight: 700,
+              lineHeight: '61.68px',
+            }}
+          >
+            Certified.
+          </span>{' '}
+          <span
+            style={{
+              color: '#86AD43',
+              fontFamily: 'Raleway',
+              fontSize: '64px',
+              fontWeight: 700,
+              lineHeight: '61.68px',
+            }}
+          >
+            Compliant.
+          </span>{' '}
+          <span
+            style={{
+              color: '#F7C35F',
+              fontFamily: 'Raleway',
+              fontSize: '64px',
+              fontWeight: 700,
+              lineHeight: '61.68px',
+            }}
+          >
+            Trusted.
+          </span>
+        </div>
 
         {/* Subheading */}
         <p
           style={{
-            fontSize: '1.1rem',
-            color: '#444',
+            height: '95px',
+            alignSelf: 'stretch',
+            color: '#1E1E1E',
+            textAlign: 'center',
+            fontFamily: 'Raleway',
+            fontSize: '24px',
+            fontWeight: 400,
+            lineHeight: '32px',
             marginBottom: '40px',
-            lineHeight: '1.6',
           }}
         >
           Cavola West Africa Limited is an accredited exporter with the Nigerian
@@ -39,21 +80,33 @@ export default function Certification() {
           trade.
         </p>
 
-        {/* Button */}
-        <Button
+        {/* Centered Button */}
+        <div
           style={{
-            backgroundColor: '#8BC34A',
-            border: 'none',
-            color: '#fff',
-            fontWeight: 600,
-            borderRadius: '999px',
-            padding: '12px 28px',
-            fontSize: '1rem',
-            boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+            display: 'flex',
+            justifyContent: 'center',
           }}
         >
-          Download Certificate →
-        </Button>
+          <Button
+            style={{
+              display: 'flex',
+              padding: '5px 29px',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '10px',
+              borderRadius: '25.235px',
+              border: '9px solid rgba(255, 255, 255, 0.57)',
+              background: '#86AD43',
+              color: '#FFF',
+              fontFamily: 'Raleway',
+              fontSize: '22.918px',
+              fontWeight: 400,
+              lineHeight: '38.197px',
+            }}
+          >
+            Download Certificate →
+          </Button>
+        </div>
       </Container>
     </section>
   );

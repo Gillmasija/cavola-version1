@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import useStore from '../store/useStore';
 import BlogCard from './BlogCard';
 import { useNavigate } from 'react-router-dom';
@@ -10,25 +10,62 @@ export default function Blog() {
   const navigate = useNavigate();
 
   return (
-    <section className="section" id="blog" style={{ background: '#fff', padding: '80px 0' }}>
-      <Container style={{ maxWidth: '1200px' }}>
-        {/* Heading with "View All" link on the right */}
+    <section
+      id="blog"
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '1729px',
+        margin: '0 auto',
+        padding: '80px 0',
+        background: '#fff',
+      }}
+    >
+      <Container
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-start',
+          gap: '36.963px',
+          height: '700.454px',
+          padding: '27.722px 0',
+          maxWidth: '1485px',
+        }}
+      >
+        {/* Heading + View All */}
         <div
           style={{
             display: 'flex',
+            width: '100%',
             justifyContent: 'space-between',
             alignItems: 'center',
-            marginBottom: '40px',
           }}
         >
-          <h2 style={{ fontWeight: 700, fontSize: '2rem', margin: 0 }}>Blog</h2>
+          <h2
+            style={{
+              width: '346.531px',
+              color: '#333',
+              fontFamily: 'Raleway',
+              fontSize: '46.204px',
+              fontWeight: 700,
+              lineHeight: '140%',
+              textTransform: 'capitalize',
+              margin: 0,
+            }}
+          >
+            Blog
+          </h2>
           <span
             onClick={() => navigate('/blog')}
             style={{
-              color: '#154734',
-              fontWeight: 500,
+              color: '#094D12',
+              fontFamily: 'Raleway',
+              fontSize: '21.179px',
+              fontWeight: 400,
+              lineHeight: '35.298px',
               cursor: 'pointer',
-              fontSize: '1rem',
             }}
           >
             View All
@@ -36,13 +73,19 @@ export default function Blog() {
         </div>
 
         {/* Blog cards */}
-        <Row xs={1} md={3} className="g-4">
+        <div
+          style={{
+            display: 'flex',
+            width: '1485px',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '65.457px',
+          }}
+        >
           {previews.map(b => (
-            <Col key={b.id}>
-              <BlogCard blog={b} />
-            </Col>
+            <BlogCard key={b.id} blog={b} />
           ))}
-        </Row>
+        </div>
       </Container>
     </section>
   );

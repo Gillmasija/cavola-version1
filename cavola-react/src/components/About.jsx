@@ -13,28 +13,39 @@ export default function About() {
         <Row className="mb-4">
           <Col>
             <p
-              style={{
-                textTransform: 'uppercase',
-                color: '#666',
-                fontSize: '0.85rem',
-                marginBottom: '8px',
-                letterSpacing: '1px',
-              }}
-            >
-              ABOUT CAVOLA
-            </p>
-            <h2
-              style={{
-                fontWeight: '700',
-                color: '#154734',
-                fontSize: '2.2rem',
-                lineHeight: '1.2',
-                marginBottom: '0',
-              }}
-            >
-              Your reliable partner in African<br />
-              Agro-commodity trade
-            </h2>
+  style={{
+    height: '23.003px',
+    alignSelf: 'stretch',
+    color: '#1E1E1E',
+    fontFamily: 'Raleway',
+    fontSize: '18.71px',
+    fontStyle: 'normal',
+    fontWeight: 400,
+    lineHeight: '24.946px', // 133.333%
+    textTransform: 'uppercase',
+    marginBottom: '12px',
+  }}
+>
+  ABOUT CAVOLA
+</p>
+
+<h2
+  style={{
+    height: '123.181px',
+    alignSelf: 'stretch',
+    color: '#094D12',
+    fontFamily: 'Raleway',
+    fontSize: '50.007px',
+    fontStyle: 'normal',
+    fontWeight: 700,
+    lineHeight: '61.688px', // 123.359%
+    marginBottom: '0',
+  }}
+>
+  Your reliable partner in African <br />
+  Agro-commodity trade
+</h2>
+
           </Col>
         </Row>
 
@@ -42,8 +53,8 @@ export default function About() {
         <Row
           className="align-items-center mb-5"
           style={{
-            background: '#154734',
-            borderRadius: '12px',
+            background: '#094D12',
+            borderRadius: '13.002px',
             overflow: 'visible',
             position: 'relative',
             minHeight: '180px',
@@ -61,19 +72,42 @@ export default function About() {
               minHeight: '320px',
             }}
           >
-            <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '28px', marginTop: '8px' }}>
-              At Cavola West Africa Limited, we help importers, manufacturers, and partners secure high-quality agricultural products without the usual risks. From Nigeria’s farms to international buyers, we ensure compliance, consistency, and efficiency.
+            <p
+              style={{
+                width: '641px',
+                height: '276px',
+                flexShrink: 0,
+                color: '#FFF',
+                fontFamily: 'Raleway',
+                fontSize: '29.004px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '46.006px', // 158.621%
+                marginBottom: '28px',
+                marginTop: '8px',
+              }}
+            >
+              At Cavola West Africa Limited, we help importers, manufacturers,
+              and partners secure high-quality agricultural products without the
+              usual risks. From Nigeria’s farms to international buyers, we
+              ensure compliance, consistency, and efficiency.
             </p>
             <Button
               style={{
-                background: '#7CB342',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '999px',
-                padding: '12px 28px',
-                fontWeight: 600,
-                fontSize: '1rem',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+                display: 'inline-flex',
+                padding: '5.001px 29.004px',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '10.001px',
+                borderRadius: '25.238px',
+                border: '9.001px solid rgba(255, 255, 255, 0.57)',
+                background: '#86AD43',
+                color: '#FFF',
+                fontFamily: 'Raleway',
+                fontSize: '22.922px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '38.203px', // 166.667%
                 width: 'fit-content',
               }}
             >
@@ -95,10 +129,10 @@ export default function About() {
               alt="About Cavola"
               style={{
                 width: '600px',
-                height: '578px',
+                height: '900px',
                 flexShrink: 0,
                 aspectRatio: '141/136',
-                marginTop: '-240px',
+                marginTop: '-390px',
                 marginRight: '-40px',
                 zIndex: 2,
                 borderRadius: '0',
@@ -110,27 +144,137 @@ export default function About() {
 
         {/* Mission / Vision / Values */}
         <Row className="g-4 mt-4">
-          {/* Mission */}
-          <Col md={4}>
-            <div className="h-100 text-center p-4 border-0 shadow-sm" style={{ background: '#fff', borderRadius: '12px' }}>
-              <img src={octgoalImg} alt="Mission" style={{ width: 40, height: 40, marginBottom: 16, display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
-              <h5 style={{ fontWeight: '600' }}>Our Mission</h5>
-              <p style={{ color: '#555', fontSize: '0.95rem' }}>
-                To make African agro-commodity trade transparent, ethical, and reliable for every buyer and partner.
-              </p>
-            </div>
-          </Col>
+{/* Mission */}
+<Col md={4}>
+  <div
+    className="h-100 text-center p-4"
+    style={{
+      display: 'inline-flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '65.009px 74.01px 64.009px 60.008px',
+      borderRadius: '11.001px',
+      border: '1px solid rgba(9, 77, 18, 0.46)',
+      background: '#fff',
+      width: '100%',
+      height: '100%',
+    }}
+  >
+    {/* Icon */}
+    <img
+      src={octgoalImg}
+      alt="Mission Icon"
+      style={{
+        width: '86.012px',
+        height: '86.012px',
+        marginBottom: '16px',
+        objectFit: 'contain',
+      }}
+    />
+
+    {/* Title */}
+    <h5
+      style={{
+        color: '#1E1E1E',
+        textAlign: 'center',
+        fontFamily: 'Raleway',
+        fontSize: '30.004px',
+        fontStyle: 'normal',
+        fontWeight: 700,
+        lineHeight: '61.688px', // 205.598%
+        marginBottom: '12px',
+      }}
+    >
+      Our Mission
+    </h5>
+
+    {/* Text */}
+    <p
+      style={{
+        width: '328.044px',
+        height: '95.013px',
+        margin: '0 auto',
+        color: '#1E1E1E',
+        textAlign: 'center',
+        fontFamily: 'Raleway',
+        fontSize: '20.003px',
+        fontStyle: 'normal',
+        fontWeight: 400,
+        lineHeight: '32.004px', // 160%
+      }}
+    >
+      To make African agro-commodity trade transparent, ethical, and reliable
+      for every buyer and partner.
+    </p>
+  </div>
+</Col>
+
 
           {/* Vision */}
-          <Col md={4}>
-            <div className="h-100 text-center p-4 border-0 shadow-sm" style={{ background: '#fff', borderRadius: '12px' }}>
-              <img src={visionImg} alt="Vision" style={{ width: 40, height: 40, marginBottom: 16, display: 'block', marginLeft: 'auto', marginRight: 'auto' }} />
-              <h5 style={{ fontWeight: '600' }}>Our Vision</h5>
-              <p style={{ color: '#555', fontSize: '0.95rem' }}>
-                To be West Africa’s most trusted integrated agricultural company, bridging African supply bases with global markets.
-              </p>
-            </div>
-          </Col>
+<Col md={4}>
+  <div
+    className="h-100 text-center p-4"
+    style={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '40px 30px',
+      borderRadius: '11.001px',
+      border: '1px solid rgba(9, 77, 18, 0.46)',
+      background: '#fff',
+      height: '100%',
+    }}
+  >
+    {/* Icon */}
+    <img
+      src={visionImg}
+      alt="Vision Icon"
+      style={{
+        width: '86.012px',
+        height: '86.012px',
+        marginBottom: '16px',
+        objectFit: 'contain',
+      }}
+    />
+
+    {/* Title */}
+    <h5
+      style={{
+        color: '#1E1E1E',
+        textAlign: 'center',
+        fontFamily: 'Raleway',
+        fontSize: '30.004px',
+        fontStyle: 'normal',
+        fontWeight: 700,
+        lineHeight: '38px',
+        marginBottom: '12px',
+      }}
+    >
+      Our Vision
+    </h5>
+
+    {/* Text */}
+    <p
+      style={{
+        color: '#1E1E1E',
+        textAlign: 'center',
+        fontFamily: 'Raleway',
+        fontSize: '20.003px',
+        fontStyle: 'normal',
+        fontWeight: 400,
+        lineHeight: '32.004px', // 160%
+        margin: 0,
+      }}
+    >
+      To be West Africa’s most trusted integrated agricultural company,
+      bridging African supply bases with global markets.
+    </p>
+  </div>
+</Col>
+
+
 
           {/* Values */}
           <Col md={4}>
@@ -143,17 +287,25 @@ export default function About() {
                 borderRadius: '12px',
               }}
             >
-              <h5 style={{ fontWeight: '600', textAlign: 'center' }}>Our Values</h5>
-              <ul style={{ listStyle: 'none', padding: 0, marginTop: '24px' }}>
-                <li style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
+              <h5 style={{ fontWeight: '600', textAlign: 'center',fontFamily: 'Raleway', fontSize: '30.004px', marginBottom: '16px' }}>
+                Our Values
+              </h5>
+              <ul style={{ listStyle: 'none', padding: 0, marginTop: '24px' , fontFamily: 'Raleway', fontSize: '20.003px', lineHeight: '41.005px'}}>
+                <li
+                  style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}
+                >
                   <img src={polyImg} alt="" style={{ width: 24, height: 24, marginRight: 10 }} />
                   Reliability you can count on
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
+                <li
+                  style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}
+                >
                   <img src={polyImg} alt="" style={{ width: 24, height: 24, marginRight: 10 }} />
                   Consistency in every shipment
                 </li>
-                <li style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}>
+                <li
+                  style={{ display: 'flex', alignItems: 'center', marginBottom: '12px' }}
+                >
                   <img src={polyImg} alt="" style={{ width: 24, height: 24, marginRight: 10 }} />
                   Transparent, ethical trade
                 </li>

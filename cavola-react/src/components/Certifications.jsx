@@ -25,24 +25,45 @@ export default function Certifications() {
   return (
     <section
       style={{
-        background: '#f8b84a', // yellow background
-        padding: '40px 0',
+        display: 'flex',
+        padding: '20.101px 137.5px 28.398px 137px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        background: '#F7C35F',
       }}
     >
       <Container>
         <Row className="text-center">
           {items.map((item, idx) => (
-            <Col md={4} key={idx} className="mb-4 mb-md-0">
+            <Col
+              md={4}
+              key={idx}
+              className="mb-4 mb-md-0 d-flex flex-column align-items-center"
+            >
               <img
                 src={item.image}
                 alt={item.text}
                 style={{
-                  height: '60px',
-                  marginBottom: '12px',
+                  width: '170px',
+                  height: '126px',
                   objectFit: 'contain',
+                  marginBottom: '12px',
                 }}
               />
-              <p style={{ fontWeight: '600', margin: 0 }}>{item.text}</p>
+              <p
+                style={{
+                  color: '#094D12',
+                  textAlign: 'center',
+                  fontFamily: 'Raleway',
+                  fontSize: '18.988px',
+                  fontStyle: 'normal',
+                  fontWeight: 700,
+                  lineHeight: '36.265px', // 190.987%
+                  margin: 0,
+                }}
+              >
+                {item.text}
+              </p>
             </Col>
           ))}
         </Row>

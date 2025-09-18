@@ -4,152 +4,203 @@ import leadershipImg from '../assets/leadership.jpg';
 
 export default function Leadership() {
   return (
-    <section id="leadership" style={{ background: '#154734', padding: '0' }}>
+    <section
+      id="leadership"
+      style={{
+        background: '#094D12',
+        width: '1729px',
+        height: '809px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
       <Container
         style={{
-          maxWidth: '1200px',
-          padding: '0 20px',
+          maxWidth: '1600px',
+          padding: '0 40px',
           margin: '0 auto',
-          position: 'relative',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between',
+          gap: '40px',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'flex-start',
-            justifyContent: 'space-between',
-            padding: '64px 0',
-            width: '100%',
-            flexWrap: 'wrap', // ✅ allow wrapping on mobile
-          }}
-        >
-          {/* Left Side */}
+        {/* Left Side */}
+        <div style={{ flex: 1, minWidth: '300px' }}>
+          {/* Leadership & Governance */}
           <div
             style={{
-              flex: 1,
-              padding: '0 20px',
-              minWidth: '300px', // ✅ ensures it shrinks nicely
+              height: '23px',
+              flexShrink: 0,
+              alignSelf: 'stretch',
+              color: '#FFF',
+              fontFamily: 'Raleway',
+              fontSize: '18.707px',
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '24.943px',
+              textTransform: 'uppercase',
+              marginBottom: '20px',
+            }}
+          >
+            LEADERSHIP & GOVERNANCE
+          </div>
+
+          {/* Built on Experience */}
+          <h2
+            style={{
+              width: '479px',
+              height: '123px',
+              flexShrink: 0,
+              color: '#F7C35F',
+              fontFamily: 'Raleway',
+              fontSize: '50px',
+              fontStyle: 'normal',
+              fontWeight: 700,
+              lineHeight: '61.68px',
+              marginBottom: '20px',
+            }}
+          >
+            Built on experience
+            <br />
+            you can trust
+          </h2>
+
+          {/* Description */}
+          <p
+            style={{
+              width: '551px',
+              height: '64px',
+              flexShrink: 0,
+              color: '#FFF',
+              fontFamily: 'Raleway',
+              fontSize: '20px',
+              fontStyle: 'normal',
+              fontWeight: 400,
+              lineHeight: '32px',
               marginBottom: '40px',
             }}
           >
-            <div
-              style={{
-                marginBottom: '18px',
-                color: '#fff',
-                fontSize: '0.95rem',
-                textTransform: 'uppercase',
-                letterSpacing: '1px',
-              }}
-            >
-              LEADERSHIP & GOVERNANCE
-            </div>
-            <h2
-              style={{
-                color: '#FFC94B',
-                fontWeight: 700,
-                fontSize: '2.2rem',
-                marginBottom: '18px',
-                lineHeight: '1.2',
-              }}
-            >
-              Built on experience
-              <br />
-              you can trust
-            </h2>
-            <p
-              style={{
-                color: '#fff',
-                fontSize: '1rem',
-                marginBottom: '30px',
-                maxWidth: '500px',
-              }}
-            >
-              Our leadership team brings global experience in finance, agribusiness, and international trade.
-            </p>
+            Our leadership team brings global experience in finance, agribusiness, and international trade.
+          </p>
 
-            {/* Spotlight Card */}
-            <div
-              style={{
-                background: '#fff',
-                borderRadius: '12px',
-                padding: '24px',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
-                maxWidth: '100%', // ✅ take full width on mobile
-                marginTop: '24px',
-                position: 'relative',
-                zIndex: 2,
-              }}
-            >
-              <div style={{ color: '#7CB342', fontWeight: 600, fontSize: '1rem', marginBottom: '8px' }}>
-                Spotlight
-              </div>
-              <div style={{ fontWeight: 700, fontSize: '1.5rem', color: '#154734', marginBottom: '8px' }}>
-                Abolaji Olorunkoya <span style={{ fontWeight: 400, color: '#154734' }}>–</span>
-                <span
-                  style={{
-                    color: '#7CB342',
-                    fontWeight: 600,
-                    fontSize: '1rem',
-                    marginLeft: '6px',
-                  }}
-                >
-                  Co-Founder & CEO
-                </span>
-              </div>
-              <div style={{ color: '#666', fontSize: '1rem', marginBottom: '20px' }}>
-                A seasoned finance executive with 20+ years of cross-continental experience, Abolaji bridges African farmers with global markets through ethical sourcing, innovation, and sustainable trade.
-              </div>
-              <Button
-                style={{
-                  background: '#fff',
-                  color: '#154734',
-                  border: '2px solid #154734',
-                  borderRadius: '999px',
-                  padding: '8px 22px',
-                  fontWeight: 600,
-                  fontSize: '0.95rem',
-                  boxShadow: 'none',
-                }}
-              >
-                Connect With Us
-              </Button>
-            </div>
-          </div>
-
-          {/* Right Side - Responsive Image */}
+          {/* Spotlight Card */}
           <div
             style={{
-              flex: 1,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: '0 20px',
-              minWidth: '300px',
+              background: '#fff',
+              borderRadius: '12px',
+              padding: '40px',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.06)',
+              marginTop: '80px',
+              position: 'relative',
+              zIndex: 2,
+              width:'850px',
+              height:'370px',
             }}
           >
+            {/* Spotlight */}
             <div
               style={{
-                background: '#fff',
-                borderRadius: '16px',
-                overflow: 'hidden',
-                width: '100%',
-                maxWidth: '600px',
-                height: 'auto',
+                width: '227px',
+                height: '28.891px',
+                flexShrink: 0,
+                color: '#86AD43',
+                fontFamily: 'Raleway',
+                fontSize: '23.695px',
+                fontStyle: 'normal',
+                fontWeight: 700,
+                lineHeight: '29.23px',
+                marginBottom: '12px',
               }}
             >
-              <img
-                src={leadershipImg}
-                alt="Abolaji Olorunkoya"
-                style={{
-                  width: '100%',
-                  height: 'auto',
-                  objectFit: 'cover',
-                }}
-              />
+              Spotlight
             </div>
+
+            {/* Abolaji + Role */}
+            <div
+              style={{
+                width: '1200px',
+                height: '60px',
+                flexShrink: 0,
+                fontFamily: 'Raleway',
+                fontSize: '50px',
+                fontStyle: 'normal',
+                fontWeight: 700,
+                lineHeight: '61.68px',
+                marginBottom: '16px',
+                color: '#1E1E1E',
+              }}
+            >
+              Abolaji Olorunkoya –{' '}
+              <span
+                style={{
+                  color: '#86AD43',
+                  fontFamily: 'Raleway',
+                  fontSize: '24px',
+                  fontStyle: 'normal',
+                  fontWeight: 700,
+                  lineHeight: '61.68px',
+                }}
+              >
+                Co-Founder & CEO
+              </span>
+            </div>
+
+            {/* Description */}
+            <div
+              style={{
+                width: '755px',
+                height: '96px',
+                flexShrink: 0,
+                color: '#1E1E1E',
+                fontFamily: 'Raleway',
+                fontSize: '20px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '32px',
+                marginBottom: '32px',
+              }}
+            >
+              A seasoned finance executive with 20+ years of cross-continental experience, Abolaji bridges
+              African farmers with global markets through ethical sourcing, innovation, and sustainable trade.
+            </div>
+
+            {/* Button */}
+            <Button
+              style={{
+                display: 'inline-flex',
+                padding: '5px 29px',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '10px',
+                borderRadius: '25.235px',
+                border: '1px solid #094D12',
+                background: '#fff',
+                color: '#094D12',
+                fontFamily: 'Raleway',
+                fontSize: '22.918px',
+                fontStyle: 'normal',
+                fontWeight: 700,
+                lineHeight: '38.197px',
+              }}
+            >
+              Connect With Us
+            </Button>
           </div>
         </div>
+
+        {/* Right Side - Image */}
+        <div
+          style={{
+            width: '730px',
+            height: '604px',
+            flexShrink: 0,
+            borderRadius: '10px',
+            background: `url(${leadershipImg}) lightgray 50% / cover no-repeat`,
+          }}
+        />
       </Container>
     </section>
   );
