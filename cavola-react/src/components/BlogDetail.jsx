@@ -1,16 +1,16 @@
+// BlogDetail.js
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import useStore from "../store/useStore";
 import Services from "./Services";
-import bannerImg from "../assets/blog-banner.jpg"; // ✅ make sure this exists
+import bannerImg from "../assets/blog-banner.jpg";
 
 export default function BlogDetail() {
+  const { id } = useParams(); // ✅ Get ID from URL
   const navigate = useNavigate();
   const blogs = useStore((state) => state.blogs);
-
-  // ✅ Always pick the first blog (id=1)
-  const blog = blogs[0];
+  const blog = blogs.find((b) => b.id === id); // ✅ Pick correct blog
 
   if (!blog) {
     return (
@@ -34,84 +34,47 @@ export default function BlogDetail() {
     );
   }
 
-  // Pick 3 related blogs (excluding the first one)
   const related = blogs.filter((b) => b.id !== blog.id).slice(0, 3);
 
   return (
     <>
-      {/* ✅ Banner Section with title BELOW the image */}
+      {/* ✅ Banner */}
       <section style={{ position: "relative", width: "100%" }}>
-        {/* Banner Image */}
         <div
           style={{
-            height: "500px",
+            height: "705px",
             borderRadius: "10px",
             backgroundImage: `url(${bannerImg})`,
             backgroundSize: "cover",
+            margin:"40px",
             backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
           }}
         />
-
-        {/* Title below image */}
         <div style={{ textAlign: "center", marginTop: "20px", padding: "0 20px" }}>
-          <h1
-            style={{
-              color: "#333",
-              fontFamily: "Raleway",
-              fontSize: "42px",
-              fontWeight: 700,
-              lineHeight: "140%",
-              textTransform: "capitalize",
-            }}
-          >
+          <h1 style={{ fontSize: "clamp(28px, 5vw, 42px)", fontWeight: 700 }}>
             {blog.title}
           </h1>
         </div>
       </section>
 
-      {/* ✅ Blog Content Section */}
+      {/* ✅ Blog Content */}
       <section style={{ padding: "40px 0" }}>
         <Container>
-          {/* Subtitle / Intro */}
-          <p
-            style={{
-              color: "#666",
-              fontFamily: "Raleway",
-              fontSize: "22px",
-              lineHeight: "150%",
-              marginBottom: "40px",
-            }}
-          >
+          <p style={{ fontSize: "clamp(16px, 2vw, 22px)", lineHeight: "150%" }}>
             {blog.excerpt}
           </p>
 
-          {/* Secondary Heading */}
           {blog.subtitle && (
-            <h2
-              style={{
-                color: "#333",
-                fontFamily: "Raleway",
-                fontSize: "32px",
-                fontWeight: 600,
-                lineHeight: "140%",
-                textTransform: "capitalize",
-                marginBottom: "20px",
-              }}
-            >
+            <h2 style={{ fontSize: "clamp(22px, 3vw, 32px)", marginBottom: "20px" }}>
               {blog.subtitle}
             </h2>
           )}
 
-          {/* Full Blog Content */}
           <p
             style={{
-              color: "#444",
-              fontFamily: "Raleway",
-              fontSize: "20px",
+              fontSize: "clamp(16px, 2vw, 20px)",
               lineHeight: "160%",
-              marginBottom: "40px",
-              whiteSpace: "pre-line", // ✅ preserves line breaks
+              whiteSpace: "pre-line",
             }}
           >
             {blog.content}
@@ -120,17 +83,7 @@ export default function BlogDetail() {
           {/* ✅ Related Blogs */}
           {related.length > 0 && (
             <div style={{ marginTop: "60px" }}>
-              <h3
-                style={{
-                  color: "#333",
-                  fontFamily: "Raleway",
-                  fontSize: "36px",
-                  fontWeight: 700,
-                  marginBottom: "30px",
-                }}
-              >
-                Related Blog
-              </h3>
+              <h3 style={{ fontSize: "clamp(22px, 3vw, 36px)" }}>Related Blogs</h3>
               <Row xs={1} sm={2} md={3} className="g-4">
                 {related.map((b) => (
                   <Col key={b.id}>
@@ -148,7 +101,6 @@ export default function BlogDetail() {
                           flexDirection: "column",
                         }}
                       >
-                        {/* ✅ Force aligned image */}
                         <div style={{ height: "200px", overflow: "hidden" }}>
                           <img
                             src={b.image}
@@ -161,22 +113,8 @@ export default function BlogDetail() {
                           />
                         </div>
                         <div style={{ padding: "15px", flexGrow: 1 }}>
-                          <h5
-                            style={{
-                              fontSize: "18px",
-                              fontWeight: 600,
-                              marginBottom: "10px",
-                            }}
-                          >
-                            {b.title}
-                          </h5>
-                          <p
-                            style={{
-                              fontSize: "14px",
-                              color: "#666",
-                              lineHeight: "1.4",
-                            }}
-                          >
+                          <h5 style={{ fontSize: "18px", fontWeight: 600 }}>{b.title}</h5>
+                          <p style={{ fontSize: "14px", color: "#666" }}>
                             {b.excerpt?.slice(0, 100)}...
                           </p>
                         </div>
