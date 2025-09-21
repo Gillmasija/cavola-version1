@@ -84,13 +84,14 @@ export default function BlogList() {
           ))}
         </Row>
 
-        {/* ✅ Pagination (always shows 1, 2, 3) */}
+        {/* ✅ Pagination (moved lower + spaced) */}
         <div
           style={{
-            marginTop: "40px",
+            margin: "80px auto 100px", // ⬇️ moves it lower & centers horizontally
+            padding: "20px",
             display: "flex",
             justifyContent: "center",
-            gap: "10px",
+            gap: "15px",
           }}
         >
           {/* Prev */}
@@ -148,7 +149,7 @@ export default function BlogList() {
       </Container>
 
       {/* ✅ Certificate/Services edge-to-edge */}
-      <div style={{ marginTop: "80px", width: "1729px" }}>
+      <div style={{ marginTop: "0px", width: "100%" ,marginBottom:"0px"}}>
         <Services />
       </div>
     </section>

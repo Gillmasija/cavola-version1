@@ -3,8 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import productImg1 from '../assets/product1.png'; // Cocoa pod
 import productImg2 from '../assets/product2.jpg'; // Bag image
 import yellowArrow from '../assets/poly.svg';
-import wheatBg from '../assets/wheat-bg.png';
-
+import wheatBg from '../assets/wheat-bg.png'; // ✅ Make sure this path is correct
 
 export default function Products() {
   return (
@@ -17,7 +16,7 @@ export default function Products() {
               style={{
                 width: '100%',
                 height: '100%',
-                minHeight: '500px',
+                minHeight: '532px',
                 borderRadius: '10px',
                 background: `url(${productImg1}) center/cover no-repeat`,
               }}
@@ -30,7 +29,7 @@ export default function Products() {
             <div
               style={{
                 width: '100%',
-                height: '250px',
+                height: '532px',
                 borderRadius: '10px',
                 background: '#FFF',
                 overflow: 'hidden',
@@ -94,7 +93,7 @@ export default function Products() {
               style={{
                 color: '#1E1E1E',
                 fontFamily: 'Raleway',
-                fontSize: '16px',
+                fontSize: '18.707px',
                 textTransform: 'uppercase',
                 marginBottom: '8px',
               }}
@@ -106,7 +105,7 @@ export default function Products() {
               style={{
                 color: '#094D12',
                 fontFamily: 'Raleway',
-                fontSize: '42px',
+                fontSize: '50px',
                 fontWeight: 700,
                 marginBottom: '16px',
               }}
@@ -118,21 +117,26 @@ export default function Products() {
               style={{
                 color: '#1E1E1E',
                 fontFamily: 'Raleway',
-                fontSize: '18px',
+                fontSize: '20px',
                 marginBottom: '24px',
               }}
             >
               We supply premium agricultural commodities with guaranteed quality and compliance.
             </p>
 
+            {/* Agro-Commodities Box */}
             <div
               style={{
                 position: 'relative',
                 borderRadius: '10px',
                 padding: '32px',
-                background: '#F9F9F7',
+                backgroundColor: '#e7e7e3ff',
+                backgroundImage: `url(${wheatBg})`, // ✅ Proper way
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center right',
+                backgroundSize: "500px auto",
                 boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-                minHeight: '420px',
+                minHeight: '700px', // ✅ matches height
                 overflow: 'hidden',
               }}
             >
@@ -156,9 +160,9 @@ export default function Products() {
                   padding: 0,
                   margin: 0,
                   fontFamily: 'Raleway',
-                  fontSize: '20px',
+                  fontSize: '29.753px',
                   fontWeight: 400,
-                  color: '#094D12',
+                  color: '#232b24ff',
                   position: 'relative',
                   zIndex: 2,
                 }}
@@ -174,7 +178,7 @@ export default function Products() {
                   'Oil Palm',
                   'Cotton',
                   'Rubber',
-                ].map((item, index, arr) =>
+                ].map((item) =>
                   item === 'Rubber' ? (
                     <li
                       key={item}
@@ -202,7 +206,7 @@ export default function Products() {
                           border: 'none',
                           padding: '8px 24px',
                           fontFamily: 'Raleway',
-                          fontSize: '16px',
+                          fontSize: '22.918px',
                         }}
                       >
                         Partner with Us →
@@ -211,7 +215,11 @@ export default function Products() {
                   ) : (
                     <li
                       key={item}
-                      style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginBottom: '10px',
+                      }}
                     >
                       <img
                         src={yellowArrow}
@@ -223,20 +231,6 @@ export default function Products() {
                   )
                 )}
               </ul>
-
-              {/* Wheat background */}
-              <img
-                src={wheatBg}
-                alt="Wheat background"
-                style={{
-                  position: 'absolute',
-                  right: '20px',
-                  bottom: '20px',
-                  width: '160px',
-                  opacity: 0.25,
-                  zIndex: 1,
-                }}
-              />
             </div>
           </Col>
         </Row>

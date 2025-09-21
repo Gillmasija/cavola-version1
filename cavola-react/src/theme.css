@@ -30,3 +30,10 @@
   color: #fff;
   padding: 40px 0;
 }
+html, body {
+  overflow-x: hidden;    /* block sideways scroll */
+  overflow-y: auto;      /* only scroll if content needs it */
+  overscroll-behavior: none;  /* 🚫 prevents scroll beyond content */
+  width: 100%;
+  height: 100%;
+}

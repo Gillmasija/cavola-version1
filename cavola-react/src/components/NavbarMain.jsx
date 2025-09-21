@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+// src/components/NavbarMain.jsx
+import React from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
@@ -6,24 +7,6 @@ import logo from '../assets/logo.png';
 export default function NavbarMain() {
   const navigate = useNavigate();
   const location = useLocation();
-
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  // Handle scroll direction with immediate hide/show
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setShowNavbar(false); // scrolling down → hide
-      } else {
-        setShowNavbar(true); // scrolling up → show
-      }
-      setLastScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
 
   // Scroll handler (for homepage sections only)
   const handleScrollTo = (e, id) => {
@@ -43,13 +26,10 @@ export default function NavbarMain() {
     <Navbar
       bg="white"
       expand="lg"
-      fixed="top"
-      className="py-2 transition-navbar"
+      className="py-2"
       style={{
-        borderBottom: 'none',
-        transform: showNavbar ? 'translateY(0)' : 'translateY(-100%)',
-        transition: 'transform 0.2s ease', // smoother & faster
-        zIndex: 1100,
+        borderBottom: 'none', // ✅ no border
+        boxShadow: 'none',    // ✅ no shadow
       }}
     >
       <Container fluid style={{ paddingLeft: '20px', paddingRight: '40px' }}>
@@ -59,8 +39,8 @@ export default function NavbarMain() {
           style={{
             cursor: 'pointer',
             display: 'flex',
-            width: '280px', // bigger logo
-            height: '200px',
+            width: '300px',   // ⬆️ increased width
+            height: '150px',  // ⬆️ increased height
             alignItems: 'center',
             flexShrink: 0,
           }}
@@ -68,75 +48,55 @@ export default function NavbarMain() {
           <img
             src={logo}
             alt="Cavola Logo"
-            style={{ height: '100%', objectFit: 'contain' }}
+            style={{
+              height: '100%',       // fills container height
+              width: '100%',        // fills container width
+              objectFit: 'contain', // keeps aspect ratio
+            }}
           />
         </Navbar.Brand>
 
-        {/* Hamburger Toggle */}
+        {/* Hamburger Toggle (mobile) */}
         <Navbar.Toggle aria-controls="navbar-nav" />
 
-        {/* Menu */}
+        {/* Menu Links */}
         <Navbar.Collapse id="navbar-nav" className="justify-content-center">
           <Nav
             className="mx-auto text-center"
             style={{
               display: 'flex',
-              padding: '12.017px 30.041px',
+              padding: '12px 30px',
               alignItems: 'flex-start',
-              gap: '63.662px',
-              borderRadius: '24.033px',
+              gap: '64px',
+              borderRadius: '24px',
               background: '#F3F3F3',
             }}
           >
             <Nav.Link
               onClick={(e) => handleScrollTo(e, 'about')}
               className="px-3"
-              style={{
-                color: '#292121',
-                fontFamily: 'Raleway',
-                fontSize: '22.918px',
-                fontWeight: 400,
-                lineHeight: '38.197px',
-              }}
+              style={{ color: '#292121', fontSize: '22px', fontFamily: 'Raleway' }}
             >
               About Us
             </Nav.Link>
             <Nav.Link
               onClick={(e) => handleScrollTo(e, 'services')}
               className="px-3"
-              style={{
-                color: '#292121',
-                fontFamily: 'Raleway',
-                fontSize: '22.918px',
-                fontWeight: 400,
-                lineHeight: '38.197px',
-              }}
+              style={{ color: '#292121', fontSize: '22px', fontFamily: 'Raleway' }}
             >
               Services
             </Nav.Link>
             <Nav.Link
-              onClick={() => navigate('/blog')} // ✅ Go to blog page directly
+              onClick={() => navigate('/blog')}
               className="px-3"
-              style={{
-                color: '#292121',
-                fontFamily: 'Raleway',
-                fontSize: '22.918px',
-                fontWeight: 400,
-                lineHeight: '38.197px',
-              }}
+              style={{ color: '#292121', fontSize: '22px', fontFamily: 'Raleway' }}
             >
               Blog
             </Nav.Link>
             <Nav.Link
               onClick={() => navigate('/contact')}
               className="px-3"
-              style={{
-                color: '#292121',
-                fontFamily: 'Raleway',
-                fontSize: '22.918px',
-                fontWeight: 400,
-                lineHeight: '38.197px',
-              }}
+              style={{ color: '#292121', fontSize: '22px', fontFamily: 'Raleway' }}
             >
               Contact Us
             </Nav.Link>
@@ -147,18 +107,14 @@ export default function NavbarMain() {
             <Button
               style={{
                 color: '#FFF',
+                fontSize: '22px',
                 fontFamily: 'Raleway',
-                fontSize: '22.918px',
-                fontWeight: 400,
-                lineHeight: '38.197px',
                 display: 'flex',
-                width: '230.719px',
-                padding: '6.008px 0',
+                width: '230px',
+                padding: '6px 0',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: '12.017px',
-                flexShrink: 0,
-                borderRadius: '25.235px',
+                borderRadius: '25px',
                 background: '#86AD43',
                 border: 'none',
               }}

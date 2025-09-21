@@ -13,11 +13,13 @@ export default function ContactPage() {
     height: "705px",
     position: "relative",
     overflow: "hidden",
-
+    width:'1500px',
     display: "flex",
     alignItems: "center",   // ✅ vertical center
     justifyContent: "flex-start", // ✅ push to left
-    paddingLeft: "80px",    // ✅ control distance from left edge
+    bottom:'100px',
+    padding: "0 80px 50px 80px",
+    margin:'40px',
   }}
 >
   {/* Banner Image */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import useStore from '../store/useStore';
 import BlogCard from './BlogCard';
 import { useNavigate } from 'react-router-dom';
@@ -13,45 +13,27 @@ export default function Blog() {
     <section
       id="blog"
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '1729px',
-        margin: '0 auto',
         padding: '80px 0',
         background: '#fff',
       }}
     >
-      <Container
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          gap: '36.963px',
-          height: '700.454px',
-          padding: '27.722px 0',
-          maxWidth: '1485px',
-        }}
-      >
+      <Container style={{ maxWidth: '1300px' }}>
         {/* Heading + View All */}
         <div
           style={{
             display: 'flex',
-            width: '100%',
             justifyContent: 'space-between',
             alignItems: 'center',
+            marginBottom: '40px',
           }}
         >
           <h2
             style={{
-              width: '346.531px',
               color: '#333',
               fontFamily: 'Raleway',
-              fontSize: '46.204px',
+              fontSize: '46px',
               fontWeight: 700,
               lineHeight: '140%',
-              textTransform: 'capitalize',
               margin: 0,
             }}
           >
@@ -62,9 +44,9 @@ export default function Blog() {
             style={{
               color: '#094D12',
               fontFamily: 'Raleway',
-              fontSize: '21.179px',
+              fontSize: '21px',
               fontWeight: 400,
-              lineHeight: '35.298px',
+              lineHeight: '35px',
               cursor: 'pointer',
             }}
           >
@@ -72,20 +54,14 @@ export default function Blog() {
           </span>
         </div>
 
-        {/* Blog cards */}
-        <div
-          style={{
-            display: 'flex',
-            width: '1485px',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '65.457px',
-          }}
-        >
+        {/* Blog cards row */}
+        <Row className="g-5"> {/* g-5 gives nice spacing between columns */}
           {previews.map(b => (
-            <BlogCard key={b.id} blog={b} />
+            <Col md={4} key={b.id}>
+              <BlogCard blog={b} />
+            </Col>
           ))}
-        </div>
+        </Row>
       </Container>
     </section>
   );
