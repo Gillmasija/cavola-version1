@@ -131,6 +131,7 @@ export default function Leadership() {
                 lineHeight: '61.68px',
                 marginBottom: '16px',
                 color: '#1E1E1E',
+                marginLeft: '-20px',
               }}
             >
               Abolaji Olorunkoya –{' '}
@@ -199,6 +200,7 @@ export default function Leadership() {
             flexShrink: 0,
             borderRadius: '10px',
             background: `url(${leadershipImg}) lightgray 50% / cover no-repeat`,
+            marginRight: '40px',
           }}
         />
       </Container>
