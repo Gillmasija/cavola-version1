@@ -7,7 +7,7 @@ import wheatBg from '../assets/wheat-bg.png'; // ✅ Make sure this path is corr
 
 export default function Products() {
   return (
-    <section id="products" style={{ padding: '80px 0' }}>
+    <section id="products" style={{ padding: '80px 0',width: '1729px' }}>
       <Container>
         <Row className="g-5">
           {/* Cocoa Pod */}

@@ -30,53 +30,82 @@ export default function Hero() {
       id="home"
       style={{
         background: "#fff",
-        padding: "20px 60px 60px 60px", // smaller top padding
-        marginTop:"-80px",
+        padding: "40px 60px 60px 60px", // ⬅ reduced top padding
+        marginTop: "-20px", // ⬅ moved section higher (less negative margin)
       }}
     >
       <Container
         fluid
-        className="d-flex align-items-center justify-content-between flex-wrap"
+        className="d-flex justify-content-between flex-wrap"
         style={{
           maxWidth: "2000px",
           margin: "0 auto",
           gap: "40px",
+          alignItems: "flex-start",
         }}
       >
         {/* Left slideshow */}
-        <div style={{ flex: 1, minWidth: 320 }}>
+        <div
+          style={{
+            flex: 1.2,
+            minWidth: 380,
+            display: "flex",
+            width: "689.496px",
+            height: "649px",
+            alignItems: "center",
+            gap: "116.159px",
+            marginTop: "40px",
+          }}
+        >
           <Carousel
             controls={false}
-            indicators
             interval={4000}
+            indicators={false}
             fade
             ride="carousel"
             pause={false}
+            style={{
+              width: "100%",
+              height: "100%",
+            }}
           >
             {images.map((img, i) => (
               <Carousel.Item key={i}>
-                <img
-                  src={img.src}
-                  alt={img.caption}
+                <div
                   style={{
-                    width: "100%",
-                    borderRadius: "12px",
-                    objectFit: "cover",
-                    maxHeight: "680px",
-                    transition: "opacity 1.2s ease-in-out",
-                  }}
-                />
-                <p
-                  style={{
-                    color: "#86AD43",
-                    textAlign: "center",
-                    fontFamily: "Raleway",
-                    fontSize: "40px",
-                    marginTop: "20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                    marginTop: "-100px",
+                    width:"600px",
+
                   }}
                 >
-                  {img.caption}
-                </p>
+                  <img
+                    src={img.src}
+                    alt={img.caption}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "16px",
+                      objectFit: "cover",
+                      transition: "opacity 1.2s ease-in-out",
+                    }}
+                  />
+                  <p
+                    style={{
+                      color: "#86AD43",
+                      textAlign: "center",
+                      fontFamily: "Raleway",
+                      fontSize: "42.627px",
+                      marginBottom: "20px",
+                      fontWeight: 400,
+                      lineHeight: "1.2",
+                    }}
+                  >
+                    {img.caption}
+                  </p>
+                </div>
               </Carousel.Item>
             ))}
           </Carousel>
@@ -87,7 +116,6 @@ export default function Hero() {
           style={{
             flex: 1.8,
             minWidth: 320,
-            marginTop: "-60px", // ✅ lift the text block higher
             opacity: loaded ? 1 : 0,
             transform: loaded ? "translateY(0)" : "translateY(20px)",
             transition: "opacity 1s ease-out, transform 1s ease-out",
@@ -96,7 +124,7 @@ export default function Hero() {
           <h1
             style={{
               fontFamily: "Raleway",
-              fontSize: "56px",
+              fontSize: "59.224px",
               fontWeight: 700,
               lineHeight: "70px",
               marginBottom: "20px",
@@ -117,7 +145,7 @@ export default function Hero() {
               maxWidth: "900px",
               color: "#1E1E1E",
               fontFamily: "Raleway",
-              fontSize: "22px",
+              fontSize: "24px",
               lineHeight: "34px",
               marginBottom: "32px",
             }}

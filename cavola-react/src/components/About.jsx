@@ -17,8 +17,10 @@ export default function About() {
                 color: "#1E1E1E",
                 fontFamily: "Raleway",
                 fontSize: "18.7px",
+                fontWeight: "400",
                 textTransform: "uppercase",
                 marginBottom: "12px",
+                lineHeight:"24.946px",
               }}
             >
               ABOUT CAVOLA
@@ -28,9 +30,10 @@ export default function About() {
               style={{
                 color: "#094D12",
                 fontFamily: "Raleway",
-                fontSize: "50px",
+                fontSize: "50.007px",
                 fontWeight: 700,
-                lineHeight: "1.2",
+                fontStyle: "normal",
+                lineHeight: "61.688px",
                 marginBottom: 0,
               }}
             >
@@ -45,9 +48,10 @@ export default function About() {
           className="align-items-center mb-5"
           style={{
             background: "#094D12",
-            borderRadius: "13px",
+            borderRadius: "13.002px",
             overflow: "visible",
             position: "relative",
+            height:"609.082px",
           }}
         >
           {/* Text */}
@@ -105,10 +109,11 @@ export default function About() {
               alt="About Cavola"
               style={{
                 width: "100%",
-                maxWidth: "550px",
-                height: "800px",
+                maxWidth: "900px",
+                height: "960px",
                 marginTop: "-350px", // ✅ still overlaps but fluid
                 objectFit: "cover",
+                aspectRatio:"874/843",
               }}
             />
           </Col>

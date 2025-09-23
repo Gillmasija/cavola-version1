@@ -30,6 +30,7 @@ export default function Certifications() {
         justifyContent: 'center',
         alignItems: 'center',
         background: '#F7C35F',
+        marginTop: '-150px',
       }}
     >
       <Container>
@@ -44,8 +45,8 @@ export default function Certifications() {
                 src={item.image}
                 alt={item.text}
                 style={{
-                  width: '170px',
-                  height: '126px',
+                  width: '180px',  // same width for all
+                  height: '180px', // same height for all
                   objectFit: 'contain',
                   marginBottom: '12px',
                 }}
@@ -58,7 +59,7 @@ export default function Certifications() {
                   fontSize: '18.988px',
                   fontStyle: 'normal',
                   fontWeight: 700,
-                  lineHeight: '36.265px', // 190.987%
+                  lineHeight: '36.265px',
                   margin: 0,
                 }}
               >
